@@ -25,7 +25,7 @@ def load_data(file_path: str) -> List[Dict[str, Any]]:
         for grade in student['grades']:
             try:
                 grades_as_float.append(float(grade))
-            except ValueError:
+            except ValueError, TypeError:
                 # not a number, e.g., Z
                 pass
         student['grades'] = grades_as_float
@@ -58,7 +58,7 @@ def determine_scholarship(students: List[Dict[str, Any]]) -> List[str]:
     return scholarship_student_nius
 
 if __name__ == "__main__":
-    students = load_data('data/students.csv')
-    # students = load_data('data/students.json')
+    # students = load_data('data/students.csv')
+    students = load_data('data/students.json')
     scholarship_student_niu_list = determine_scholarship(students)
     print(scholarship_student_niu_list)
