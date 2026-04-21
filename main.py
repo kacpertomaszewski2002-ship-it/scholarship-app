@@ -25,7 +25,7 @@ def load_data(file_path: str) -> List[Dict[str, Any]]:
         for grade in student['grades']:
             try:
                 grades_as_float.append(float(grade))
-            except ValueError:
+            except ValueError, TypeError:
                 # not a number, e.g., Z
                 pass
         student['grades'] = grades_as_float
