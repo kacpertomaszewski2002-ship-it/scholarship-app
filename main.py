@@ -2,6 +2,8 @@ import ast
 import json
 from typing import Dict, List, Any
 
+print("Nowa zmiana")
+
 
 import pandas as pd
 
